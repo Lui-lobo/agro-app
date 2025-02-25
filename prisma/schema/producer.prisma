@@ -1,0 +1,9 @@
+model Producer {
+  id       String @id @default(uuid())
+  name     String
+  cpf      String? @unique
+  cnpj     String? @unique
+  farms    Farm[]
+  createdAt DateTime @default(now())
+}
+

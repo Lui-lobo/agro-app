@@ -1,0 +1,7 @@
+model Harvest {
+  id       String  @id @default(uuid())
+  year     Int
+  farmId   String
+  farm     Farm  @relation(fields: [farmId], references: [id])
+  crops    Crop[]
+}

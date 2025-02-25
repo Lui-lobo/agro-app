@@ -1,0 +1,12 @@
+model Farm {
+  id              String   @id @default(uuid())
+  name            String
+  city            String
+  state           String
+  totalArea       Float
+  arableArea      Float
+  vegetationArea  Float
+  producerId      String
+  producer        Producer @relation(fields: [producerId], references: [id])
+  harvests        Harvest[]
+}
