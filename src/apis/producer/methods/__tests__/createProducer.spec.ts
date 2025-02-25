@@ -1,26 +1,22 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { BadRequestException, UnauthorizedException } from '@nestjs/common'; // Importando a exceção
 // Importando serviços a serem testados
-import { ProducerService } from './producer.service';
-import { PrismaService } from '../../prisma/prisma.service';
-import { CryptoService } from '../../utils/services/encryptionService';
-import validateCnpj from '../producer/methods/validateCnpj';
-import validateCpf from '../producer/methods/validateCpf';
+import { ProducerService } from '../../producer.service';
+import { PrismaService } from '../../../../prisma/prisma.service';
+import { CryptoService } from '../../../../utils/services/encryptionService';
+import validateCnpj from '../validateCnpj';
+import validateCpf from '../validateCpf';
 // Importando controllers
-import { ProducerController } from './producer.controller';
+import { ProducerController } from '../../producer.controller';
 // Importando metodo de criação de produtor
-import createProducer from '../producer/methods/createProducer';
-import deleteProducer from '../producer/methods/deleteProducer';
-import updateProducer from '../producer/methods/updateProducer';
+import createProducer from '../createProducer';
 // Importando DTO de criação de produtor
-import { CreateProducerDto, UpdateProducerDto, DeleteProducerDto } from 'src/utils/dtos/producer/producer.dto';
+import { CreateProducerDto } from 'src/utils/dtos/producer/producer.dto';
 // Criando Mocks
-jest.mock('../../utils/services/encryptionService'); // Mock do cryptoService
-jest.mock('../producer/methods/createProducer'); // Mock de createProducer
-jest.mock('../producer/methods/validateCpf'); // Mock de validateCpf
-jest.mock('../producer/methods/validateCnpj'); // Mock de validateCnpj
-jest.mock('../producer/methods/deleteProducer'); // Mock de deleteProducer
-jest.mock('../producer/methods/updateProducer'); // Mokc de updateProducer
+jest.mock('../../../../utils/services/encryptionService'); // Mock do cryptoService
+jest.mock('../createProducer'); // Mock de createProducer
+jest.mock('../validateCpf'); // Mock de validateCpf
+jest.mock('../validateCnpj'); // Mock de validateCnpj
 
 describe('Producer Service', () => {
   let controller: ProducerController;
@@ -36,9 +32,7 @@ describe('Producer Service', () => {
           provide: PrismaService,
           useValue: {
             producer: {
-              create: jest.fn(),
-              update: jest.fn(),
-              delete: jest.fn(),
+              create: jest.fn()
             },
           },
         },
@@ -62,7 +56,7 @@ describe('Producer Service', () => {
   });
 
    // ------------------- Testes de sucesso da create producer ------------------- //
-  /*it('should create a valid producer with cpf', async () => {
+  it('should create a valid producer with cpf', async () => {
     const cryptoService = new CryptoService(); // Instancia do serviço de criptografia
     const createProducerDto: CreateProducerDto = { name: 'Otavio Dos Santos', cpf: '12345678900' } as CreateProducerDto; // Dados de teste com CPF
     const expectedResult = { name: 'Otavio Dos Santos', cpf: '1Fh2ViCs10uCn6owQ0A7yA==', id: 'idDeTeste', cnpj: null, createdAt: new Date() }; // Resultado esperado
@@ -108,7 +102,7 @@ describe('Producer Service', () => {
       const createProducerDto = { name: 'Henrique carvalho', cnpj: '257a98360c0114213234' } as CreateProducerDto;
 
       // Simula a rejeição da Promise com a mensagem de erro
-      (createProducer as jest.Mock).mockRejectedValue(new UnauthorizedException('Invalid CNPJ'));
+      jest.mocked(createProducer).mockRejectedValue(new UnauthorizedException('Invalid CNPJ'));
 
       // Mock da validação do CNPJ para retornar falso
       jest.mocked(validateCnpj).mockResolvedValue(false);
@@ -122,9 +116,9 @@ describe('Producer Service', () => {
       const createProducerDto = { name: 'Otavio Henrique', cpf: '475ascw3221412312' } as CreateProducerDto;
 
       // Simula a rejeição da Promise com a mensagem de erro
-      (createProducer as jest.Mock).mockRejectedValue(new UnauthorizedException('Invalid CPF'));
+      jest.mocked(createProducer).mockRejectedValue(new UnauthorizedException('Invalid CPF'));
 
-      // Mock da validação do CNPJ para retornar falso
+      // Mock da validação do CPF para retornar falso
       jest.mocked(validateCpf).mockResolvedValue(false);
 
       // Verifica se a exceção é lançada
@@ -136,7 +130,7 @@ describe('Producer Service', () => {
       const createProducerDto = { name: 'Otavio Dos Santos', cpf: '12345678900' } as CreateProducerDto;
 
       // Simula a rejeição da Promise com a mensagem de erro
-      (createProducer as jest.Mock).mockRejectedValue(new BadRequestException('The CPF sended already exists!.'));
+      jest.mocked(createProducer).mockRejectedValue(new BadRequestException('The CPF sended already exists!.'));
 
       // Mock da validação do CNPJ para retornar falso
       jest.mocked(validateCpf).mockResolvedValue(false);
@@ -150,7 +144,7 @@ describe('Producer Service', () => {
       const createProducerDto = { name: 'Henrique carvalho', cnpj: '25749836000114' } as CreateProducerDto;
 
       // Simula a rejeição da Promise com a mensagem de erro
-      (createProducer as jest.Mock).mockRejectedValue(new BadRequestException('The CNPJ sended already exists!.'));
+      jest.mocked(createProducer).mockRejectedValue(new BadRequestException('The CNPJ sended already exists!.'));
 
       // Mock da validação do CNPJ para retornar falso
       jest.mocked(validateCpf).mockResolvedValue(false);
@@ -158,5 +152,5 @@ describe('Producer Service', () => {
       // Verifica se a exceção é lançada
       await expect(service.create(createProducerDto)).rejects.toThrow(BadRequestException);
       await expect(service.create(createProducerDto)).rejects.toThrow('The CNPJ sended already exists!.');
-  });*/
+  });
 });

@@ -1,11 +1,11 @@
 // Importando DTOs
-import { UpdateProducerDto } from "src/utils/dtos/producer/producer.dto";
+import { UpdateProducerDto } from "../../../utils/dtos/producer/producer.dto";
 // Importando serviço do prisma
-import { PrismaService } from "src/prisma/prisma.service";
+import { PrismaService } from "../../../prisma/prisma.service";
 // Buscando exeções do NestJs
 import { NotFoundException, ConflictException, Logger, InternalServerErrorException } from '@nestjs/common';
 // Importando serviços
-import { cryptoService } from "src/utils/services/encryptionService";
+import { cryptoService } from "../../../utils/services/encryptionService";
 // Criando Logger
 const logger = new Logger('updateProducer');
 

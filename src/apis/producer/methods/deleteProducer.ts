@@ -1,5 +1,5 @@
 // Importando serviço do prisma
-import { PrismaService } from "src/prisma/prisma.service";
+import { PrismaService } from "../../../prisma/prisma.service";
 // Importando exçeções
 import { NotFoundException, ConflictException, Logger } from "@nestjs/common";
 // Criando novo logger
