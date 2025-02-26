@@ -14,7 +14,7 @@ import { UpdateProducerDto } from 'src/utils/dtos/producer/producer.dto';
 jest.mock('../../../../utils/services/encryptionService'); // Mock do cryptoService
 jest.mock('../updateProducer'); // Mock de createProducer
 
-describe('Producer Service', () => {
+describe('Update producer', () => {
   let controller: ProducerController;
   let service: ProducerService;
   let prismaService: PrismaService;

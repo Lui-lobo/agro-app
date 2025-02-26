@@ -18,7 +18,7 @@ jest.mock('../createProducer'); // Mock de createProducer
 jest.mock('../validateCpf'); // Mock de validateCpf
 jest.mock('../validateCnpj'); // Mock de validateCnpj
 
-describe('Producer Service', () => {
+describe('create Producer', () => {
   let controller: ProducerController;
   let service: ProducerService;
   let prismaService: PrismaService;

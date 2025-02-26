@@ -12,7 +12,7 @@ import { DeleteProducerDto } from 'src/utils/dtos/producer/producer.dto';
 // Criando Mocks
 jest.mock('../deleteProducer'); // Mock de createProducer
 
-describe('Producer Service', () => {
+describe('delete producer', () => {
   let controller: ProducerController;
   let service: ProducerService;
   let prismaService: PrismaService;
