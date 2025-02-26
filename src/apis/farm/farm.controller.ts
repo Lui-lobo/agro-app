@@ -1,5 +1,5 @@
 // Imports comuns do nestJs
-import { Controller, Post, Body, Logger, Put, Delete, Query } from '@nestjs/common';
+import { Controller, Post, Body, Logger } from '@nestjs/common';
 // Importando serviço de fazenda/propriedade
 import { FarmService } from './farm.service';
 // Importando decoradores do swagger
@@ -9,7 +9,7 @@ import { Farm } from '@prisma/client';
 // Importando DTOs
 import { AddFarmDto } from '../../utils/dtos/farms/farms.dto';
 // Importando decorators
-import { ApiAddFarm } from 'src/common/decorators/apis/farm/ApiAddFarm';
+import { ApiAddFarm } from '../../common/decorators/apis/farm/ApiAddFarm';
 
 // Criando Logger
 const logger = new Logger('ProducerController');

@@ -7,12 +7,12 @@ import { PrismaService } from '../../../../prisma/prisma.service';
 import { FarmController } from '../../farm.controller';
 // Importando metodos
 import addFarm from '../addFarm';
-// Criando mocks
-jest.mock('../addFarm'); // Mock de addFarm
 // Importando DTOs
 import { AddFarmDto } from '../../../../utils/dtos/farms/farms.dto';
 // Importando exceções
 import { BadRequestException, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+// Criando mocks
+jest.mock('../addFarm'); // Mock de addFarm
 
 describe('add farm', () => {
   let service: FarmService;
@@ -28,9 +28,11 @@ describe('add farm', () => {
             provide: PrismaService,
             useValue: {
               producer: {
-                create: jest.fn(),
                 findUnique: jest.fn()
               },
+              farm: {
+                create: jest.fn(),
+              }
             },
           },
         ],
