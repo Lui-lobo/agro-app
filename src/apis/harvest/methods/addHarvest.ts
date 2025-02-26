@@ -7,6 +7,8 @@ import { NotFoundException, Logger, InternalServerErrorException } from "@nestjs
 // Criação de logger
 const logger = new Logger('addHarvest'); 
 
+// Devo analisar se posteriormente deveriamos impedir que a mesma fazenda
+// Cadastre mais de uma safra por ano.
 export default async function addHarvest(prisma: PrismaService, harvestData: AddHarvestDto) {
     const { farmId, year } = harvestData;
 
