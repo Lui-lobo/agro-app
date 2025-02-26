@@ -9,9 +9,9 @@ import { ApiOperation } from '@nestjs/swagger';
 // Importando modelo do producer
 import { Producer } from '@prisma/client';
 // Importando decoradores
-import { ApiCreateProducer } from '../../common/decorators/apis/ApiCreateProducer';
-import { ApiUpdateProducer } from '../../common/decorators/apis/ApiUpdateProducer';
-import { ApiDeleteProducer } from '../../common/decorators/apis/ApiDeleteProducer';
+import { ApiCreateProducer } from '../../common/decorators/producer/ApiCreateProducer';
+import { ApiUpdateProducer } from '../../common/decorators/producer/ApiUpdateProducer';
+import { ApiDeleteProducer } from '../../common/decorators/producer/ApiDeleteProducer';
 // Criando Logger
 const logger = new Logger('ProducerController');
 

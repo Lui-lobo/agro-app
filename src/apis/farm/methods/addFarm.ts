@@ -31,8 +31,8 @@ export default async function addFarm(prisma: PrismaService, farmData: AddFarmDt
     try {
         return prisma.farm.create({ data: farmData });
     } catch (err) {
-        logger.error('Fatal error when adding new farm');
-        throw new InternalServerErrorException('Fatal error when adding new farm');
+        logger.error('Fatal error occurred while adding a new farm to the producer.');
+        throw new InternalServerErrorException('Fatal error occurred while adding a new farm to the producer.');
     }
     
 }

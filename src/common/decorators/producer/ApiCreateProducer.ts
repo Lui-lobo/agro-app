@@ -17,7 +17,7 @@ export function ApiCreateProducer() {
       description: 'O produtor foi adicionado com sucesso!',
       schema: {
         example: {
-          id: 'idDeTeste2',
+          id: '219de228-e9ef-48d9-908b-062cf9ed1a8a',
           name: 'Henrique Dos Santos',
           cnpj: 'kAvYXLySL9xapgQ9ufkJBg==',
           createdAt: new Date(),

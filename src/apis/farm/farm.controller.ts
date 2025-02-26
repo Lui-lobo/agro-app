@@ -8,6 +8,8 @@ import { ApiOperation } from '@nestjs/swagger';
 import { Farm } from '@prisma/client';
 // Importando DTOs
 import { AddFarmDto } from '../../utils/dtos/farms/farms.dto';
+// Importando decorators
+import { ApiAddFarm } from 'src/common/decorators/apis/farm/ApiAddFarm';
 
 // Criando Logger
 const logger = new Logger('ProducerController');
@@ -19,7 +21,8 @@ export class FarmController {
      // As rotas estão sendo validadas pelo nosso Pipe global
     @Post('/add')
     @ApiOperation({ summary: 'Adiciona uma nova fazenda' })
-    addFarm(@Body() farmData: AddFarmDto)/*: Promise<Farm>*/ {
+    @ApiAddFarm()
+    addFarm(@Body() farmData: AddFarmDto): Promise<Farm> {
         logger.log(`Adding farm with data: ${JSON.stringify(farmData)}`);
         return this.farmService.addFarm(farmData);
     }
