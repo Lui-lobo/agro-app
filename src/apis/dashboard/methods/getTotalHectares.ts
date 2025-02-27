@@ -12,7 +12,7 @@ export default async function getTotalHectares(prisma: PrismaService) {
 
     const totalHectares = calculate._sum.totalArea || 0;
 
-    logger.log(`Contagem total de hectares: ${totalHectares}`);
+    logger.log(`total hectares counted: ${totalHectares}`);
   
     return { totalHectares };
 }

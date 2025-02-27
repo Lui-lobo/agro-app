@@ -8,7 +8,7 @@ const logger = new Logger('getTotalFarms');
 export default async function getTotalFarms(prisma: PrismaService) {
     const totalFarms = await prisma.farm.count();
 
-    logger.log(`Contagem total de fazendas encontradas: ${totalFarms}`);
+    logger.log(`Total farm counted: ${totalFarms}`);
 
     return { totalFarms };
 }
