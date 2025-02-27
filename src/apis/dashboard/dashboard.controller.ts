@@ -19,15 +19,15 @@ export class DashboardController {
     getTotalHectares() {
       return this.dashboardService.getTotalHectares();
     }   
-    @Get('/farms-by-state')
+    @Get('/farmsByState')
     getFarmsByState() {
       return this.dashboardService.getFarmsByState();
     }   
-    @Get('/crops-distribution')
+    @Get('/cropsDistribution')
     getCropsDistribution() {
       return this.dashboardService.getCropsDistribution();
     }   
-    @Get('/land-usage')
+    @Get('/landUsage')
     getLandUsage() {
       return this.dashboardService.getLandUsage();
     }
