@@ -16,7 +16,7 @@ describe('HarvestController', () => {
         {
           provide: HarvestService, // Mock do service
           useValue: {
-            addFarm: jest.fn(),
+            addHarvest: jest.fn(),
           },
         },
       ],

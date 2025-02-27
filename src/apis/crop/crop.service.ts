@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 // Importando Serviços
 import { PrismaService } from '../../prisma/prisma.service';
 // Importando DTOs
-import { AddCropDto } from 'src/utils/dtos/crop/crop.dto';
+import { AddCropDto } from '../../utils/dtos/crop/crop.dto';
 // Importando metodos
 import addCrop from './methods/addCrop';
 

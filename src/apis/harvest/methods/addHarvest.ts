@@ -10,7 +10,7 @@ const logger = new Logger('addHarvest');
 // Devo analisar se posteriormente deveriamos impedir que a mesma fazenda
 // Cadastre mais de uma safra por ano.
 export default async function addHarvest(prisma: PrismaService, harvestData: AddHarvestDto) {
-    const { farmId, year } = harvestData;
+    const { farmId } = harvestData;
 
     logger.log(`Checking whether the sent farm ID is included in the registers`);
 
@@ -26,10 +26,7 @@ export default async function addHarvest(prisma: PrismaService, harvestData: Add
     try {
         // Cria uma nova safra
         return prisma.harvest.create({
-            data: {
-            year: year,
-            farmId: farmId,
-            },
+            data: harvestData
         });
     } catch (err) {
         logger.error(`A fatal error occured when creating harvest -> ${JSON.stringify(err)}`);

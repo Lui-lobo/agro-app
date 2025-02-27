@@ -9,7 +9,7 @@ import { AddHarvestDto } from '../../../../utils/dtos/harvest/harvest.dto';
 // Importando metodos
 import addHarvest from '../addHarvest';
 // Importando exceptions
-import { NotFoundException } from '@nestjs/common';
+import { InternalServerErrorException, NotFoundException } from '@nestjs/common';
 // Criando mocks
 jest.mock('../addHarvest'); // Mock de addHarvest
 
@@ -115,10 +115,10 @@ describe('add harvest', () => {
       // Não encontra o produtor enviado no sistema
       jest.spyOn(prismaService.farm, 'findUnique').mockResolvedValue(existingFarm);
       // Simula a rejeição da Promise com a mensagem de erro
-      jest.mocked(addHarvest).mockRejectedValue(new NotFoundException(`A fatal error occured when creating harvest -> ${JSON.stringify(err)}`));
+      jest.mocked(addHarvest).mockRejectedValue(new InternalServerErrorException(`A fatal error occured when creating harvest -> ${JSON.stringify(err)}`));
   
       // Verifica se a exceção é lançada
-      await expect(service.add(addHarvestDto)).rejects.toThrow(NotFoundException);
+      await expect(service.add(addHarvestDto)).rejects.toThrow(InternalServerErrorException);
       await expect(service.add(addHarvestDto)).rejects.toThrow(`A fatal error occured when creating harvest -> ${JSON.stringify(err)}`);
     });
 });
