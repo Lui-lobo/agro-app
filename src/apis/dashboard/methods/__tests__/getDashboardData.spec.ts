@@ -6,17 +6,17 @@ import { PrismaService } from '../../../../prisma/prisma.service';
 // Importando controllers
 import { DashboardController } from '../../dashboard.controller';
 // Importando metodos
-import getCropsDistribution from '../getCropsDistribution';
-import getFarmsByState from '../getFarmsByState';
-import getLandUsage from '../getLandUsage';
-import getTotalFarms from '../getTotalFarms';
-import getTotalHectares from '../getTotalHectares';
+import getTotalFarms from "../../../../apis/farm/methods/getTotalFarms";
+import getTotalHectares from "../../../../apis/farm/methods/getTotalHectares";
+import getFarmsByState from "../../../../apis/farm/methods/getFarmsByState";
+import getCropsDistribution from "../../../../apis/crop/methods/getCropsDistribution";
+import getLandUsage from "../../../../apis/farm/methods/getLandUsage";
 // Mockando metodos
-jest.mock('../getCropsDistribution'); // Mock de getCropsDistribution
-jest.mock('../getFarmsByState');
-jest.mock('../getLandUsage');
-jest.mock('../getTotalFarms');
-jest.mock('../getTotalHectares');
+jest.mock('../../../../apis/crop/methods/getCropsDistribution'); // Mock de getCropsDistribution
+jest.mock('../../../../apis/farm/methods/getFarmsByState');
+jest.mock('../../../../apis/farm/methods/getLandUsage');
+jest.mock('../../../../apis/farm/methods/getTotalFarms');
+jest.mock('../../../../apis/farm/methods/getTotalHectares');
 
 describe('Get dashboard', () => {
   let service: DashboardService;

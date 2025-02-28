@@ -1,21 +1,22 @@
 // Importando modulos de teste do nest
 import { Test, TestingModule } from '@nestjs/testing';
 // Importando Serviço de fazenda/propriedade
-import { DashboardService } from '../../dashboard.service';
+//import { DashboardService } from '../../dashboard.service';
+import { FarmService } from '../../farm.service';
 import { PrismaService } from '../../../../prisma/prisma.service';
 // Importando controllers
-import { DashboardController } from '../../dashboard.controller';
+import { FarmController } from '../../farm.controller';
 
 describe('Get Land Usage', () => {
-  let service: DashboardService;
-  let controller: DashboardController;
+  let service: FarmService;
+  let controller: FarmController;
   let prismaService: PrismaService;
 
    beforeEach(async () => {
       const module: TestingModule = await Test.createTestingModule({
-        controllers: [DashboardController],
+        controllers: [FarmController],
         providers: [
-            DashboardService,
+          FarmService,
           {
             provide: PrismaService,
             useValue: {
@@ -27,8 +28,8 @@ describe('Get Land Usage', () => {
         ],
       }).compile();
   
-      controller = module.get<DashboardController>(DashboardController);
-      service = module.get<DashboardService>(DashboardService);
+      controller = module.get<FarmController>(FarmController);
+      service = module.get<FarmService>(FarmService);
       prismaService = module.get<PrismaService>(PrismaService);
   
       // Limpar todos os mocks antes de cada teste

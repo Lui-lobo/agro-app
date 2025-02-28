@@ -1,5 +1,5 @@
 // imports comuns do nest
-import { Controller, Logger, Post, Body } from '@nestjs/common';
+import { Controller, Logger, Post, Body, Get } from '@nestjs/common';
 // Importando serviço
 import { CropService } from './crop.service';
 // Importando decoradores do swagger
@@ -10,6 +10,7 @@ import { AddCropDto } from '../../utils/dtos/crop/crop.dto';
 import { Crop } from '@prisma/client';
 // importando decoradores
 import { ApiAddCrop } from '../../common/decorators/crop/ApiAddCrop';
+import { ApiGetCropsDistribution } from '../..//common/decorators/crop/ApiGetCropsDistribution';
 
 // Criando Logger
 const logger = new Logger('cropController');
@@ -26,4 +27,12 @@ export class CropController {
         logger.log(`Adding crop with data: ${JSON.stringify(cropData)}`);
         return this.cropService.addCrop(cropData);
     }
+
+    @Get('/cropsDistribution')
+    @ApiOperation({ summary: 'Busca todas as culturas de plantação e as retorna em uma lista' })
+    @ApiGetCropsDistribution()
+    getCropsDistribution() {
+      return this.cropService.getCropsDistribution();
+    }
+    
 }

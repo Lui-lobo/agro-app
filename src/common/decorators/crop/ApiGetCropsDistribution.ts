@@ -4,13 +4,14 @@ export function ApiGetCropsDistribution() {
   return function (target: any, key: string, descriptor: PropertyDescriptor) {
     ApiResponse({
       status: 1,
-      description: 'A cultura foi adicionada com sucesso para a safra!',
+      description: 'Retorna a distribuição de culturas',
       schema: {
-        example: {
-          id: "b1706eeb-5691-495a-ae34-fb123e752c0d",
-          name: "Milho",
-          harvestId: "805c572a-c47c-45b2-8654-6a5eb1fb5798"
-        }
+        example: [
+          {
+              "crop": "Milho",
+              "total": 1
+          }
+      ]
       },
     })(target, key, descriptor);
   };
