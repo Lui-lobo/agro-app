@@ -10,11 +10,13 @@ export class DashboardController {
     @Get()
     getDashboard() {
       return this.dashboardService.getDashboardData();
-    }   
+    }
+
     @Get('/farms')
     getTotalFarms() {
       return this.dashboardService.getTotalFarms();
-    }   
+    }
+
     @Get('/hectares')
     getTotalHectares() {
       return this.dashboardService.getTotalHectares();
@@ -22,11 +24,13 @@ export class DashboardController {
     @Get('/farmsByState')
     getFarmsByState() {
       return this.dashboardService.getFarmsByState();
-    }   
+    }
+
     @Get('/cropsDistribution')
     getCropsDistribution() {
       return this.dashboardService.getCropsDistribution();
-    }   
+    }
+    
     @Get('/landUsage')
     getLandUsage() {
       return this.dashboardService.getLandUsage();
