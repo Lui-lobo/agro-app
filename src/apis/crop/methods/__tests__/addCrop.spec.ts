@@ -14,7 +14,7 @@ import { InternalServerErrorException, NotFoundException } from '@nestjs/common'
 // Criando mocks
 jest.mock('../addCrop'); // Mock de addCrop
 
-describe('add farm', () => {
+describe('add Crop', () => {
   let service: CropService;
   let controller: CropController;
   let prismaService: PrismaService;

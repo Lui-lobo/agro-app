@@ -8,7 +8,7 @@ import { ApiOperation } from '@nestjs/swagger';
 import { AddCropDto } from '../../utils/dtos/crop/crop.dto';
 // Importando Modelos
 import { Crop } from '@prisma/client';
-// importando decoradores
+// importando decoradores de documentação
 import { ApiAddCrop } from '../../common/decorators/crop/ApiAddCrop';
 import { ApiGetCropsDistribution } from '../..//common/decorators/crop/ApiGetCropsDistribution';
 
