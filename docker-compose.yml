@@ -1,0 +1,28 @@
+services:
+  api:
+    build:
+      context: .
+    container_name: agro-api
+    environment:
+      - DATABASE_URL=postgresql://postgres:1234@postgres:5432/agroDatabase?schema=public
+      - ENCRYPTION_KEY=meusegredo32byteslong1234567890
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    command: bash -c "chmod +x /usr/src/app/wait-for-db.sh && ./wait-for-db.sh postgres:5432 -- npx prisma migrate deploy && npm start"
+
+  postgres:
+    image: postgres:15
+    container_name: agro-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: agroDatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
