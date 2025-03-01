@@ -56,8 +56,8 @@ describe('add harvest', () => {
 
   // ------------------- Testes de sucesso da add harvest ------------------- //
    it('should add a harvest to a farm', async () => {
-      const addHarvestDto: AddHarvestDto = { year: 2021, farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e' } as AddHarvestDto;
-      const expectedResult = { id: '1c5236c7-65d1-49f5-85f5-7c1081802c3f', year: 2021, farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e' }; // Resultado esperado
+      const addHarvestDto: AddHarvestDto = { year: 2021, farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e', description: 'Safra do primeiro semestre de 2021' } as AddHarvestDto;
+      const expectedResult = { id: '1c5236c7-65d1-49f5-85f5-7c1081802c3f', year: 2021, farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e', description: 'Safra do primeiro semestre de 2021' }; // Resultado esperado
   
       const existingFarm = { 
           id: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e', 
@@ -85,7 +85,7 @@ describe('add harvest', () => {
 
     // ------------------- Testes de exceções da add harvest ------------------- //
     it('Should throw a NotFoundException when the farm ID does not exist in the registers.', async () => {
-        const addHarvestDto: AddHarvestDto = { year: 2021, farmId: 'idQueNaoExiste' } as AddHarvestDto;
+      const addHarvestDto: AddHarvestDto = { year: 2021, farmId: 'idQueNaoExiste', description: 'Safra para fazenda que não existe' } as AddHarvestDto;
   
       // Não encontra o produtor enviado no sistema
       jest.spyOn(prismaService.farm, 'findUnique').mockResolvedValue(null);
@@ -98,7 +98,7 @@ describe('add harvest', () => {
     });
     
     it('should throw an NotFoundException when producerId dont exist in the registers', async () => {
-      const addHarvestDto: AddHarvestDto = { year: undefined, farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e' } as AddHarvestDto;
+      const addHarvestDto: AddHarvestDto = { year: undefined, farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e', description: 'Safra que retorna um erro fatal' } as AddHarvestDto;
       const err = 'cannot use undefined as a value';
 
       const existingFarm = { 

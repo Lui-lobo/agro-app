@@ -33,14 +33,16 @@ describe('HarvestController', () => {
   it('should add a new harvest', async () => {
     const harvestDTO: AddHarvestDto = { 
       year: 2021,
-      farmId: "af0e99ae-8b0c-4755-bbc0-eb88abb0c10e"
+      farmId: "af0e99ae-8b0c-4755-bbc0-eb88abb0c10e",
+      description: 'Safra do primeiro semestre de 2021'
     } as AddHarvestDto;
 
     const result = await controller.addHarvest(harvestDTO);
 
     expect(result).toEqual({
       year: 2021,
-      farmId: "af0e99ae-8b0c-4755-bbc0-eb88abb0c10e"
+      farmId: "af0e99ae-8b0c-4755-bbc0-eb88abb0c10e",
+      description: 'Safra do primeiro semestre de 2021'
     });
     expect(service.add).toHaveBeenCalledWith(harvestDTO);
     expect(service.add).toHaveBeenCalledTimes(1);

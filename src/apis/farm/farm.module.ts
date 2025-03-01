@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 // Importando serviços
 import { FarmService } from './farm.service';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../../prisma/prisma.service';
 // Importando controllers
 import { FarmController } from './farm.controller';
 // Importando modulos
-import { PrismaModule } from 'src/prisma/prisma.module';
+import { PrismaModule } from '../../prisma/prisma.module';
 
 @Module({
   providers: [FarmService, PrismaService],
