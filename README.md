@@ -16,3 +16,10 @@ garantindo um registro detalhado de cada produtor e suas respectivas propriedade
     </li>
   </ul>
 </div>
+
+  <hr>
+
+<div>
+  <h2>Recursos</h2>
+  <a href="#recursos"></a>
+</div>
