@@ -42,7 +42,7 @@ garantindo um registro detalhado de cada produtor e suas respectivas propriedade
     </li>
   </ul>
 
-  <h3>Regras de Negócio Implementadas</h3>
+  <h3>📊 Regras de Negócio Implementadas</h3>
   <ul>
     <li>
       <p>Validação de CPF/CNPJ para evitar registros inválidos.</p>
@@ -54,7 +54,31 @@ garantindo um registro detalhado de cada produtor e suas respectivas propriedade
       <p>Associação flexível de produtores a uma ou mais propriedades.</p>
     </li>
     <li>
-      <p>Permissão para múltiplas culturas por fazenda e por safra..</p>
+      <p>Permissão para múltiplas culturas por fazenda e por safra.</p>
+    </li>
+  </ul>
+
+  <h3>📈 Dashboard e Relatórios</h3>
+  <ul>
+    <li>
+      <p>Exibição do total de fazendas cadastradas.</p>
+    </li>
+    <li>
+      <p>Cálculo do total de hectares registrados.</p>
+    </li>
+    <li>
+      <p>Gráficos de distribuição:</p>
+      <ul>
+        <li>
+          <p>Por estado das fazendas.</p>
+        </li>
+        <li>
+          <p>Por cultura plantada.</p>
+        </li>
+        <li>
+          <p>Por uso do solo (área agricultável e vegetação).</p>
+        </li>
+      </ul>
     </li>
   </ul>
 </div>
