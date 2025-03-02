@@ -1,97 +1,67 @@
-<h1>Agro App 🍃</h1>
+# Agro App 🍃
 
-O Agro App foi criado para facilitar o gerenciamento de produtores rurais e suas propriedades envolvidas. A solução permite um controle eficiente das fazendas, 
-garantindo um registro detalhado de cada produtor e suas respectivas propriedades agrícolas.
+O **Agro App** foi criado para facilitar o gerenciamento de produtores rurais e suas propriedades envolvidas. A solução permite um controle eficiente das fazendas, garantindo um registro detalhado de cada produtor e suas respectivas propriedades agrícolas.
 
-<hr>
+---
 
-<div>
-  <h2>Indice 📋</h2>
+## 📋 Índice
 
-  <ul>
-    <li>
-      <p>
-        <a href="#recursos">Recursos</a>
-      </p>
-    </li>
-  </ul>
-</div>
+- [🔧 Recursos](#recursos)
+- [🖥️ Como rodar o projeto](#como-rodar-o-projeto)
 
-  <hr>
+---
 
-<div>
-  <h2>Recursos</h2>
-  <a href="#recursos"></a>
-  <p>O Agro App disponibiliza os seguintes recursos para gerenciamento eficiente das propriedades rurais:</p>
-  <h3>📌 Cadastro e Gestão</h3>
-  <ul>
-    <li>
-      <p>Cadastro, edição e exclusão de produtores rurais.</p>
-    </li>
-    <li>
-      <p>Validação automática de CPF ou CNPJ antes da inclusão no sistema.</p>
-    </li>
-    <li>
-      <p>Registro e gerenciamento de múltiplas propriedades por produtor.</p>
-    </li>
-    <li>
-      <p>Cadastro de áreas detalhadas: área total, agricultável e de vegetação.</p>
-    </li>
-    <li>
-      <p>Controle de culturas plantadas por safra</p>
-    </li>
-  </ul>
+## 🔧 Recursos
 
-  <h3>📊 Regras de Negócio Implementadas</h3>
-  <ul>
-    <li>
-      <p>Validação de CPF/CNPJ para evitar registros inválidos.</p>
-    </li>
-    <li>
-      <p>Garantia de que a soma das áreas agricultável e de vegetação não ultrapasse a área total da fazenda.</p>
-    </li>
-    <li>
-      <p>Associação flexível de produtores a uma ou mais propriedades.</p>
-    </li>
-    <li>
-      <p>Permissão para múltiplas culturas por fazenda e por safra.</p>
-    </li>
-  </ul>
+O **Agro App** disponibiliza os seguintes recursos para o gerenciamento eficiente das propriedades rurais:
 
-  <h3>📈 Dashboard e Relatórios</h3>
-  <ul>
-    <li>
-      <p>Exibição do total de fazendas cadastradas.</p>
-    </li>
-    <li>
-      <p>Cálculo do total de hectares registrados.</p>
-    </li>
-    <li>
-      <p>Gráficos de pizza:</p>
-      <ul>
-        <li>
-          <p>Por estado das fazendas.</p>
-        </li>
-        <li>
-          <p>Por cultura plantada.</p>
-        </li>
-        <li>
-          <p>Por uso do solo (área agricultável e vegetação).</p>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</div>
+### 📌 Cadastro e Gestão
 
-<hr>
+- Cadastro, edição e exclusão de produtores rurais.
+- Validação automática de CPF ou CNPJ antes da inclusão no sistema.
+- Registro e gerenciamento de múltiplas propriedades por produtor.
+- Cadastro de áreas detalhadas: área total, agricultável e de vegetação.
+- Controle de culturas plantadas por safra.
 
-<div>
-  <h2>Como rodar o projeto 🖥️</h2>
-  <div>
-    <h3>Como rodar o projeto com Docker Compose 🐋</h3>
-    ```bash
-    (https://github.com/Lui-lobo/agro-app.git)
-    cd agro-app
-    ```    
-  </div>
-</div>
+### 📊 Regras de Negócio Implementadas
+
+- Validação de CPF/CNPJ para evitar registros inválidos.
+- Garantia de que a soma das áreas agricultável e de vegetação não ultrapasse a área total da fazenda.
+- Associação flexível de produtores a uma ou mais propriedades.
+- Permissão para múltiplas culturas por fazenda e por safra.
+
+### 📈 Dashboard e Relatórios
+
+- Exibição do total de fazendas cadastradas.
+- Cálculo do total de hectares registrados.
+- **Gráficos de pizza**:
+  - Distribuição por estado das fazendas.
+  - Distribuição por cultura plantada.
+  - Distribuição por uso do solo (área agricultável e vegetação).
+
+---
+
+## 🖥️ Como rodar o projeto
+
+### Como rodar o projeto com Docker Compose 🐋
+
+1️. Clone o repositório:
+```sh
+git clone https://github.com/Lui-lobo/agro-app.git
+cd agro-app
+```
+
+2. Instalação dos pacotes necessários (é necessário utilizar o legacy-peer-deps devido um conflito entre as versões do swagger e o nestJs, não há impacto na aplicação.)
+```sh
+npm install --legacy-peer-deps ou npm install --force
+```
+
+3. Configurar as suas variaveis de ambiente para o docker
+Crie um arquivo .env na raiz do projeto (dentro da pasta agro-app) e configure as informações do banco de dados como o exemplo abaixo:
+```sh
+DATABASE_URL="postgresql://postgres:1234@postgres:5432/agroDatabase?schema=public"
+ENCRYPTION_KEY=meusegredo32byteslong1234567890
+```
+Nota: A chave de criptografia está no .env devido ser uma aplicação local. (Está pratica nunca deve acontecer em servidores que sejam distribuidos para clientes, funcionarios ou empresas no geral.)
+
+4. 
