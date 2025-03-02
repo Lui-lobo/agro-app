@@ -7,6 +7,7 @@ O **Agro App** foi criado para facilitar o gerenciamento de produtores rurais e 
 ## 📋 Índice
 
 - [🔧 Recursos](#recursos)
+- [👷 Arquitetura e Diagramas](#arquitetura-e-diagramas)
 - [🖥️ Como rodar o projeto](#como-rodar-o-projeto)
 
 ---
@@ -39,6 +40,18 @@ O **Agro App** disponibiliza os seguintes recursos para o gerenciamento eficient
   - Distribuição por cultura plantada.
   - Distribuição por uso do solo (área agricultável e vegetação).
 
+---
+
+## 👷 Arquitetura e Diagramas
+Abaixo estão os diagramas ilustrando o fluxo da aplicação e sua arquitetura.
+
+Estrutura do banco de dados <br>
+O diagrama abaixo apresenta um modelo relacional da estrutura do banco de dados gerados via migrations.
+![Estrutura do banco](docs/diagramaAgroApp.png)
+
+Fluxograma da aplicação <br>
+O diagrama abaixo apresenta um fluxo de utilidade da Api REST da aplicação.
+![Fluxograma da aplicacao](docs/fluxoDaAplicacao.svg)
 ---
 
 ## 🖥️ Como rodar o projeto
