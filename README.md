@@ -71,7 +71,39 @@ docker compose up -d
 
 5. Caso todos os passos acima tenham sido executados corretamente, o servidor estará sendo executado localmente em: ```http://localhost:3000```
 
-### Como rodar o projeto localmente
+### Como rodar o projeto localmente ⌨
 Nota: Para rodar o projeto localmente é necessário que todas as depedências do projeto sejam instaladas, sendo elas:
 - O banco de dados postgres (Versões 15 para cima)
 - O NodeJs (Versões 18 para cima)
+
+1️. Clone o repositório:
+```sh
+git clone https://github.com/Lui-lobo/agro-app.git
+cd agro-app
+```
+
+2. Instalação dos pacotes necessários (é necessário utilizar o legacy-peer-deps devido um conflito entre as versões do swagger e o nestJs, não há impacto na aplicação.)
+```sh
+npm install --legacy-peer-deps ou npm install --force
+```
+
+3. Configurar as suas variaveis de ambiente para o uso local
+Crie um arquivo .env na raiz do projeto (dentro da pasta agro-app) e configure as informações do banco de dados como o exemplo abaixo:
+```sh
+DATABASE_URL="postgresql://postgres:1234@localhost:5432/agroDatabase?schema=public"
+ENCRYPTION_KEY=meusegredo32byteslong1234567890
+```
+Nota: A chave de criptografia está no .env devido ser uma aplicação local. (Está pratica nunca deve acontecer em servidores que sejam distribuidos para clientes, funcionarios ou empresas no geral.)
+
+4. Execute as migrações para gerar as tabelas no banco de dados
+```sh
+npx prisma migrate dev
+```
+Nota: Para o prisma poder gerar as migrações é necessário que o banco esteja localmente criado. Caso ele não exista por favor crie o banco ```agroDatabase``` localmente em seu postgres para rodar as migrações :)
+
+5. Inicie o servidor de desenvolvimento com o seguinte comando:
+```sh
+npm run start:dev
+```
+
+6. Caso todos os passos acima tenham sido executados corretamente, o servidor estará sendo executado localmente em: ```http://localhost:3000```
