@@ -5,11 +5,11 @@ import { Logger } from "@nestjs/common";
 // Criação de logger
 const logger = new Logger('getDashboardData'); 
 // Importando metodos
-import getTotalFarms from '../methods/getTotalFarms';
-import getTotalHectares from '../methods/getTotalHectares';
-import getFarmsByState from '../methods/getFarmsByState';
-import getCropsDistribution from '../methods/getCropsDistribution';
-import getLandUsage from '../methods/getLandUsage';
+import getTotalFarms from "../../../apis/farm/methods/getTotalFarms";
+import getTotalHectares from "../../../apis/farm/methods/getTotalHectares";
+import getFarmsByState from "../../../apis/farm/methods/getFarmsByState";
+import getCropsDistribution from "../../../apis/crop/methods/getCropsDistribution";
+import getLandUsage from "../../../apis/farm/methods/getLandUsage";
 
 export default async function getDashboardData(prisma: PrismaService) {
     const [totalFarms, totalHectares, farmsByState, cropsDistribution, landUsage] =

@@ -5,7 +5,7 @@ import { PrismaService } from '../../prisma/prisma.service';
 // Importando controllers
 import { HarvestController } from './harvest.controller';
 // Importando modulos
-import { PrismaModule } from 'src/prisma/prisma.module';
+import { PrismaModule } from '../../prisma/prisma.module';
 
 @Module({
   providers: [HarvestService, PrismaService],

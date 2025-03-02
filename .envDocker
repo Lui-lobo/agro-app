@@ -1,0 +1,3 @@
+DATABASE_URL="postgresql://postgres:1234@postgres:5432/agroDatabase?schema=public"
+
+ENCRYPTION_KEY=meusegredo32byteslong1234567890

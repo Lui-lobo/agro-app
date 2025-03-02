@@ -5,6 +5,7 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { AddCropDto } from '../../utils/dtos/crop/crop.dto';
 // Importando metodos
 import addCrop from './methods/addCrop';
+import getCropsDistribution from './methods/getCropsDistribution';
 
 @Injectable()
 export class CropService {
@@ -12,5 +13,9 @@ export class CropService {
 
     async addCrop(cropData: AddCropDto) {
         return await addCrop(this.prisma, cropData);
+    }
+
+     async getCropsDistribution() {
+        return await getCropsDistribution(this.prisma);
     }
 }
