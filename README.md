@@ -47,11 +47,18 @@ Abaixo estão os diagramas ilustrando o fluxo da aplicação e sua arquitetura.
 
 Estrutura do banco de dados <br>
 O diagrama abaixo apresenta um modelo relacional da estrutura do banco de dados gerados via migrations.
+
 ![Estrutura do banco](docs/diagramaAgroApp.png)
 
 Fluxograma da aplicação <br>
 O diagrama abaixo apresenta um fluxo de utilidade da Api REST da aplicação.
+
 ![Fluxograma da aplicacao](docs/fluxoDaAplicacao.svg)
+
+Fluxograma do Dashboard <br>
+O diagrama abaixo apresenta o fluxo de utilização do dashboard no qual consome a Api REST
+
+![Fluxograma do dashboard](docs/fluxoGramaDashboard.png)
 ---
 
 ## 🖥️ Como rodar o projeto
