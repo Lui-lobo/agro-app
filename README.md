@@ -9,6 +9,8 @@ O **Agro App** foi criado para facilitar o gerenciamento de produtores rurais e 
 - [🔧 Recursos](#recursos)
 - [👷 Arquitetura e Diagramas](#arquitetura-e-diagramas)
 - [🖥️ Como rodar o projeto](#como-rodar-o-projeto)
+- [🧪 Como rodar os testes](#como-rodar-os-testes)
+- [📄 Documentacação](#documentacao)
 
 ---
 
@@ -127,3 +129,33 @@ npm run start:dev
 ```
 
 6. Caso todos os passos acima tenham sido executados corretamente, o servidor estará sendo executado localmente em: ```http://localhost:3000```
+
+---
+
+
+## 🧪 Como rodar os testes
+Para executar os testes unitários, apenas é necessário rodar o seguinte comando em seu terminal:
+
+```sh
+npm run test
+```
+
+Para executar os testes de integração: <br>
+Nota: Os testes de integração utilizam um banco de dados exclusivo, criado especificamente para essa finalidade. Isso garante que os testes não afetem os dados da aplicação principal nem sejam impactados por eles.
+1. Deve-se criar um novo banco no postgres com o nome:
+```integrationTestDatabase```
+2. Deve-se rodar as migrations para esse novo banco de integração com o comando
+```sh
+npx prisma migrate dev
+```
+Nota: o env.test está nos arquivos da aplicação, renomeio para apenas .env, rode o comando, e após isso renomeio novamente para env.test :)
+
+Caso o banco de testes de integração tenha sido corretamente criado, rodar o comando: <br>
+```sh
+npm run test:e2e
+```
+
+---
+
+## 📄 Documentacação
+
