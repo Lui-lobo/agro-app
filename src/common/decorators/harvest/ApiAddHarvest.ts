@@ -7,7 +7,8 @@ export function ApiAddHarvest() {
       schema: {
         example: {
           year: 2021,
-          farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e'
+          farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e',
+          description: 'Safra do primeiro semestre de 2021'
         }
       },
     })(target, key, descriptor);
@@ -19,7 +20,8 @@ export function ApiAddHarvest() {
         example: {
             id: '1c5236c7-65d1-49f5-85f5-7c1081802c3f',
             year: 2021,
-            farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e'
+            farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e',
+            description: 'Safra do primeiro semestre de 2021'
         }
       },
     })(target, key, descriptor);
