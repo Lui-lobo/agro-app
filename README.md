@@ -10,7 +10,8 @@ O **Agro App** foi criado para facilitar o gerenciamento de produtores rurais e 
 - [👷 Arquitetura e Diagramas](#arquitetura-e-diagramas)
 - [🖥️ Como rodar o projeto](#como-rodar-o-projeto)
 - [🧪 Como rodar os testes](#como-rodar-os-testes)
-- [📄 Documentacação](#documentacao)
+- [📄 Documentacação da Api](#documentacao)
+- [🧭 Endpoints](#endpoints)
 
 ---
 
@@ -157,5 +158,48 @@ npm run test:e2e
 
 ---
 
-## 📄 Documentacação
+## 📄 Documentacação da Api
+A documentação da API do Agro App é gerada automaticamente com Swagger, permitindo que os usuários explorem e testem os endpoints de forma interativa.
+
+📌 Como acessar a documentação?
+Ao rodar a aplicação basta acessar a url:
+```sh
+http://localhost:3000/api#/
+```
+Nestá rota você encontrará a documentação de todas as apis do projeto!
+
+---
+
+## 🧭 Endpoints
+### Produtor
+| Método  | URL                     | Descrição                        |
+|---------|-------------------------|----------------------------------|
+| **POST**  | `/producers/create`            | Cria um novo produtor nos registros     |
+| **PUT**  | `/producers/update`            | Atualiza um produtor nos registros     |
+| **DELETE**  | `/producers/delete/?producerId=${producerId}`            | Deleta um produtor nos registros     |
+
+### Fazenda
+| Método  | URL                     | Descrição                        |
+|---------|-------------------------|----------------------------------|
+| **POST** | `/farm/add`            | Adiciona uma fazenda para um produtor    |
+| **GET**  | `/farm/farmsByState`   | Busca as fazendas do sistema e as retorna por estado e quantidade    |
+| **GET**  | `/farm/landUsage`      | Busca o total de uso de terras no sistema    |
+| **GET**  | `/farm/farms`          | Busca a quantidade total de fazendas registradas no sistema   |
+| **GET**  | `/farm/hectares`       | Busca a quantidade total de hectares registrados no sistema   |
+
+### Safra
+| Método  | URL                     | Descrição                        |
+|---------|-------------------------|----------------------------------|
+| **POST** | `/harvest/add`         | Adiciona uma safra para uma fazenda |
+
+### Cultura
+| Método  | URL                     | Descrição                        |
+|---------|-------------------------|----------------------------------|
+| **POST** | `/crop/add`            | Adiciona uma cultura para uma safra |
+| **GET** | `/crop/cropsDistribution` | Busca a distribuição de culturas nos registros do sistema |
+
+### Dashboard
+| Método  | URL                     | Descrição                        |
+|---------|-------------------------|----------------------------------|
+| **GET** | `/dashboard` | Retorna a distribuição de culturas, quantidade total de fazendas, quantidade total de hectares, uso total de terras no sistema e a distribuição de fazendas por estado |
 
