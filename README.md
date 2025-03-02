@@ -12,6 +12,8 @@ O **Agro App** foi criado para facilitar o gerenciamento de produtores rurais e 
 - [🧪 Como rodar os testes](#como-rodar-os-testes)
 - [📄 Documentacação da Api](#documentacao)
 - [🧭 Endpoints](#endpoints)
+- [📈 Dashboard](#dashboard)
+- [☁️ Deploy na nuvem](#nuvem)
 
 ---
 
@@ -202,4 +204,37 @@ Nestá rota você encontrará a documentação de todas as apis do projeto!
 | Método  | URL                     | Descrição                        |
 |---------|-------------------------|----------------------------------|
 | **GET** | `/dashboard` | Retorna a distribuição de culturas, quantidade total de fazendas, quantidade total de hectares, uso total de terras no sistema e a distribuição de fazendas por estado |
+
+---
+
+## 📈 Dashboard
+O projeto conta com um pequeno front-end em react no qual contem o dashboard da aplicação, para acessa-lo rode os seguintes passos:
+
+1. Clonar o repositorio com o dashboard
+```sh
+git clone https://github.com/Lui-lobo/dashboard-agroapp.git
+cd dashboard-agroapp
+```
+
+2. Instalar as dependencias do projeto:
+```sh
+npm install
+```
+
+3. Rodar o projeto:
+```sh
+npm run dev
+```
+
+4. Caso todos os passos tenham sido executados corretamente, o dashboard estará disponivel em: ```http://localhost:5173/```
+
+Imagem do dashboard funcional:
+![dashboardFuncional](docs/image.png)
+
+---
+
+## ☁️ Deploy na nuvem
+
+Esté projeto também está em um ambiente na nuvem e pode ser acessado de qualquer localização!
+A URL de acesso via nuvem desté projeto será enviado junto deste repositório!
 
