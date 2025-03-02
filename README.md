@@ -67,7 +67,7 @@ garantindo um registro detalhado de cada produtor e suas respectivas propriedade
       <p>Cálculo do total de hectares registrados.</p>
     </li>
     <li>
-      <p>Gráficos de distribuição:</p>
+      <p>Gráficos de pizza:</p>
       <ul>
         <li>
           <p>Por estado das fazendas.</p>
@@ -81,4 +81,17 @@ garantindo um registro detalhado de cada produtor e suas respectivas propriedade
       </ul>
     </li>
   </ul>
+</div>
+
+<hr>
+
+<div>
+  <h2>Como rodar o projeto 🖥️</h2>
+  <div>
+    <h3>Como rodar o projeto com Docker Compose 🐋</h3>
+    ```bash
+    (https://github.com/Lui-lobo/agro-app.git)
+    cd agro-app
+    ```    
+  </div>
 </div>
