@@ -62,7 +62,8 @@ describe('add Crop', () => {
        const existingHarvest = { 
            id: '805c572a-c47c-45b2-8654-6a5eb1fb5798', 
            year: 2022,
-           farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e'
+           farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e',
+           description: 'Safra do segundo semestre de 2022'
        };
  
        // Mock para encontrar a fazenda enviada
@@ -99,7 +100,8 @@ describe('add Crop', () => {
       const existingHarvest = { 
         id: '805c572a-c47c-45b2-8654-6a5eb1fb5798', 
         year: 2022,
-        farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e'
+        farmId: 'af0e99ae-8b0c-4755-bbc0-eb88abb0c10e',
+         description: 'Safra do segundo semestre de 2022'
       };
 
       // Não encontra o produtor enviado no sistema
