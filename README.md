@@ -64,4 +64,14 @@ ENCRYPTION_KEY=meusegredo32byteslong1234567890
 ```
 Nota: A chave de criptografia está no .env devido ser uma aplicação local. (Está pratica nunca deve acontecer em servidores que sejam distribuidos para clientes, funcionarios ou empresas no geral.)
 
-4. 
+4. Executando o docker
+```sh
+docker compose up -d
+```
+
+5. Caso todos os passos acima tenham sido executados corretamente, o servidor estará sendo executado localmente em: ```http://localhost:3000```
+
+### Como rodar o projeto localmente
+Nota: Para rodar o projeto localmente é necessário que todas as depedências do projeto sejam instaladas, sendo elas:
+- O banco de dados postgres (Versões 15 para cima)
+- O NodeJs (Versões 18 para cima)
